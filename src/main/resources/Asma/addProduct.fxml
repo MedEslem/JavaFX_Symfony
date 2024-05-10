@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../styleBack.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddProduct">
+    <children>
+      <ImageView fitHeight="648.0" fitWidth="1254.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../javaBG1.jpg" />
+         </image>
+      </ImageView>
+        <TextField fx:id="tfnameP" layoutX="607.0" layoutY="193.0" promptText="Product Name ">
+            <effect>
+                <ColorAdjust />
+            </effect></TextField>
+        <Button layoutX="715.0" layoutY="451.0" mnemonicParsing="false" onAction="#ajouterProduit" prefHeight="26.0" prefWidth="84.0" text="Add" />
+        <TextField fx:id="tfdescP" layoutX="607.0" layoutY="243.0" prefHeight="26.0" prefWidth="335.0" promptText="Description" />
+        <TextField fx:id="tfimgP" layoutX="617.0" layoutY="385.0" promptText="Product Image " styleClass="text-input" />
+        <TextField fx:id="tfprixP" layoutX="793.0" layoutY="193.0" promptText="Product Price " />
+        <ComboBox fx:id="cbcategorie" layoutX="731.0" layoutY="286.0" prefWidth="150.0" promptText="Category" styleClass="buttonlOGOUT" />
+        <ComboBox fx:id="cbtag" layoutX="731.0" layoutY="325.0" prefWidth="150.0" promptText="Tag" styleClass="buttonlOGOUT" />
+        <Button layoutX="820.0" layoutY="385.0" mnemonicParsing="false" onAction="#uploadimage" text="Upload" />
+      <Label layoutX="607.0" layoutY="289.0" prefHeight="27.0" prefWidth="100.0" text="Add A Category" textFill="#aeaeae" />
+      <Label layoutX="607.0" layoutY="328.0" prefHeight="27.0" prefWidth="70.0" text="Add A Tag" textFill="#aeaeae" />
+      <ImageView fx:id="logoIMG" fitHeight="530.0" fitWidth="528.0" layoutX="24.0" layoutY="14.0" onMouseClicked="#ProductPage" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../al3ab_blanc.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="446.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add a new Product" textAlignment="CENTER" wrappingWidth="470.39996337890625">
+         <font>
+            <Font name="System Bold" size="46.0" />
+         </font>
+      </Text>
+    </children>
+
+</AnchorPane>

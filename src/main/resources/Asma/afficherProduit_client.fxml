@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../styleBack.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AfficherProduit_client">
+    <children>
+        <ImageView fx:id="tri" fitHeight="648.0" fitWidth="1254.0" layoutX="-25.0" layoutY="-5.0" opacity="1" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../javaBG1.jpg" />
+            </image>
+        </ImageView>
+        <ScrollPane layoutX="272.0" layoutY="150.0" prefHeight="426.0" prefWidth="722.0">
+            <content>
+                <GridPane fx:id="grid">
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                </GridPane>
+            </content>
+            <effect>
+                <ColorAdjust contrast="0.01" saturation="0.02" />
+            </effect>
+        </ScrollPane>
+        <TextField fx:id="tfrecherche" layoutX="422.0" layoutY="121.0" promptText="Serach..." />
+        <ComboBox fx:id="cbtri" layoutX="583.0" layoutY="121.0" prefHeight="26.0" prefWidth="122.0" promptText="Sort" styleClass="buttonlOGOUT" />
+
+
+        <Button layoutX="1008.0" layoutY="207.0" mnemonicParsing="false" onAction="#add" prefHeight="26.0" prefWidth="90.0" text="New Product" />
+        <Button layoutX="1008.0" layoutY="297.0" mnemonicParsing="false" onAction="#genererPDF" prefHeight="26.0" prefWidth="90.0" text="PDF" />
+        <Button layoutX="1008.0" layoutY="343.0" mnemonicParsing="false" onAction="#afficherStatistiques" prefHeight="26.0" prefWidth="90.0" text="Total" />
+        <Button layoutX="731.0" layoutY="121.0" mnemonicParsing="false" onAction="#tri" prefHeight="26.0" prefWidth="69.0" text="sort" />
+        <Button layoutX="1008.0" layoutY="384.0" mnemonicParsing="false" onAction="#stat" prefHeight="26.0" prefWidth="90.0" text="Stat" />
+        <Button layoutX="1008.0" layoutY="252.0" mnemonicParsing="false" onAction="#update" prefHeight="26.0" prefWidth="90.0" text="Update" />
+      <AnchorPane layoutX="34.0" layoutY="166.0" prefHeight="426.0" prefWidth="218.0">
+         <children>
+            <Button layoutX="-5.0" layoutY="79.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="222.0" style="-fx-background-color: #11111163;" text="Shop">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="-5.0" layoutY="137.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="222.0" text="Forum">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="eventsBTN" layoutX="-5.0" layoutY="195.0" mnemonicParsing="false" onAction="#eventsPage" prefHeight="58.0" prefWidth="222.0" text="Events">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="CompBTN" layoutX="-5.0" layoutY="253.0" mnemonicParsing="false" onAction="#CompPage" prefHeight="58.0" prefWidth="222.0" text="Competition">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="memberBTN" layoutX="50.0" layoutY="322.0" mnemonicParsing="false" onAction="#memberPage" opacity="0.84" prefHeight="39.0" prefWidth="111.0" styleClass="buttonlMember" text="Member Space" />
+            <Button fx:id="logoutIN" layoutX="50.0" layoutY="370.0" mnemonicParsing="false" opacity="0.84" prefHeight="26.0" prefWidth="111.0" styleClass="buttonlOGOUT" text="Logout" />
+            <Button fx:id="UserBTN" layoutX="-6.0" layoutY="20.0" mnemonicParsing="false" onAction="#UserPage" prefHeight="58.0" prefWidth="222.0" text="User">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Text fill="WHITE" layoutX="432.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Products" textAlignment="CENTER" wrappingWidth="365.60003662109375">
+         <font>
+            <Font name="System Bold" size="58.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="179.0" fitWidth="168.0" layoutX="50.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../al3ab_blanc.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="50.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Space" textAlignment="CENTER" wrappingWidth="168.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="TagsBTN" layoutX="1008.0" layoutY="480.0" mnemonicParsing="false" onAction="#TagsPage" prefHeight="26.0" prefWidth="199.0" text="Tags" />
+      <Button fx:id="CategoryBTN" layoutX="1008.0" layoutY="516.0" mnemonicParsing="false" onAction="#Category" prefHeight="26.0" prefWidth="199.0" text="Category" />
+
+
+
+    </children>
+
+</AnchorPane>
