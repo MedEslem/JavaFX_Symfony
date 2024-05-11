@@ -1,0 +1,11 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+print:
+  path: /produit/print
+  controller: App\Controller\ProduitController::print
+  methods: ['GET']
+cart_add:
+  path: '/add/{id_produit}'
+  controller: 'App\Controller\CartController::add'
+  methods: ['GET']

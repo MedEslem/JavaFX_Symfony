@@ -1,0 +1,62 @@
+{% extends 'home/front/form.html.twig' %}
+
+{% block body %}
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    <div class="container-fluid">
+        <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <a href="{{ path('app_category_index') }}" class="" >
+                            <h3 class="text-primary"><img src="{{ asset('front_office/img/Al3ab/al3ab_blanc.png') }} " width="30%" height="30%" alt="">Add Event</h3>
+                        </a>
+                    </div>
+                    {{ form_label(form.Titre_event) }}
+                    {{ form_widget(form.Titre_event, {attr: {'class': 'form-control', 'placeholder': 'Titre ', 'autocomplete': 'Titre_event'}}) }}
+                    {% if form_errors(form.Titre_event)|length > 0 %}
+                        <div class="error-message">{{ form_errors(form.Titre_event) }}</div>
+                    {% endif %}
+                    {{ form_label(form.Prix_event) }}
+                    {{ form_widget(form.Prix_event, {attr: {'class': 'form-control', 'placeholder': 'Prix', 'autocomplete': 'Prix_event'}}) }}
+                    {% if form_errors(form.Prix_event)|length > 0 %}
+                        <div class="error-message">{{ form_errors(form.Prix_event) }}</div>
+                    {% endif %}
+                    {{ form_label(form.Nbr_personnes) }}
+                    {{ form_widget(form.Nbr_personnes, {attr: {'class': 'form-control', 'placeholder': 'Nombre personnes', 'autocomplete': 'Nbr_personnes'}}) }}
+                    {% if form_errors(form.Nbr_personnes)|length > 0 %}
+                        <div class="error-message">{{ form_errors(form.Nbr_personnes) }}</div>
+                    {% endif %}
+                    {{ form_label(form.Description_event) }}
+                    {{ form_widget(form.Description_event, {attr: {'class': 'form-control', 'placeholder': 'Description', 'autocomplete': 'Description_event'}}) }}
+                    {% if form_errors(form.Description_event)|length > 0 %}
+                        <div class="error-message">{{ form_errors(form.Description_event) }}</div>
+                    {% endif %}
+                    {{ form_label(form.Date_event) }}
+                    {{ form_widget(form.Date_event, {attr: {'class': 'form-control', 'placeholder': 'Date evenement', 'autocomplete': 'Date_event'}}) }}
+                    {% if form_errors(form.Date_event)|length > 0 %}
+                        <div class="error-message">{{ form_errors(form.Date_event) }}</div>
+                    {% endif %}
+                    {{ form_label(form.Etat_event) }}
+                    {{ form_widget(form.Etat_event, {attr: {'class': 'form-control', 'placeholder': 'Etat', 'autocomplete': 'Etat_event'}}) }}
+                    {% if form_errors(form.Etat_event)|length > 0 %}
+                        <div class="error-message">{{ form_errors(form.Etat_event) }}</div>
+                    {% endif %}
+                    {{ form_label(form.Lieu_event) }}
+                    {{ form_widget(form.Lieu_event, {attr: {'class': 'form-control', 'placeholder': 'Lieux', 'autocomplete': 'Lieu_event'}}) }}
+                    {% if form_errors(form.Lieu_event)|length > 0 %}
+                        <div class="error-message">{{ form_errors(form.Lieu_event) }}</div>
+                    {% endif %}
+                    {{ form_label(form.Categorie_Event) }}
+                    {{ form_widget(form.Categorie_Event, {attr: {'class': 'form-control', 'placeholder': 'Categorie', 'autocomplete': 'Categorie_Event'}}) }}
+                    {% if form_errors(form.Categorie_Event)|length > 0 %}
+                        <div class="error-message">{{ form_errors(form.Categorie_Event) }}</div>
+                    {% endif %}
+                    <div class="text-center mb-0">
+                        {{ form_widget(form.Submit, {attr: {'class': 'btn btn-primary py-3 w-100 mb-4'} }) }}
+                        {{ form_end(form)}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

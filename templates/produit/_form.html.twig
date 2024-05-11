@@ -1,0 +1,58 @@
+{% extends 'home/front/form.html.twig' %}
+{% block body %}
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    <div class="container-fluid">
+        <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <a href="{{ path('app_produit_index') }}" class="" >
+                            <h3 class="text-primary"><img src="{{ asset('front_office/img/Al3ab/al3ab_blanc.png') }} " width="30%" height="40%"  alt="">Ajouter Produit</h3>
+                        </a>
+                    </div>
+
+                    {{ form_label(form.nom_produit) }}
+                    {{ form_widget(form.nom_produit, {attr: {'class': 'form-control', 'autocomplete': 'nom'}}) }}
+                    {% if form_errors(form.nom_produit)|length > 0 %}
+                        <div class="error-message">{{ form_errors(form.nom_produit) }}</div>
+                    {% endif %}
+
+                    {{ form_label(form.description_produit) }}
+                    {{ form_widget(form.description_produit, {attr: {'class': 'form-control', 'autocomplete': 'description'}}) }}
+                    {% if form_errors(form.description_produit)|length > 0 %}
+                        <div class="error-message">{{ form_errors(form.description_produit) }}</div>
+                    {% endif %}
+                    {{ form_label(form.image_produit) }}
+                    {{ form_widget(form.image_produit, {attr: {'class': 'form-control bg-dark border-0', 'placeholder': 'image', 'autocomplete': 'image'}}) }}
+                    {% if form_errors(form.image_produit) %}
+                        <div class="error-message">{{ form_errors(form.image_produit) }}</div>
+                    {% endif %}
+
+                    {{ form_label(form.prix_produit) }}
+                    {{ form_widget(form.prix_produit, {attr: {'class': 'form-control bg-dark border-0','autocomplete': 'prix'}}) }}
+                    {% if form_errors(form.prix_produit)|length > 0 %}
+                        <div class="error-message">{{ form_errors(form.prix_produit) }}</div>
+                    {% endif %}
+
+                    {{ form_label(form.categorieProd) }}
+                    {{ form_widget(form.categorieProd, {attr: {'class': 'form-control bg-dark border-0', 'autocomplete': 'categorie'}}) }}
+                    {% if form_errors(form.categorieProd)|length > 0 %}
+                        <div class="error-message">{{ form_errors(form.categorieProd) }}</div>
+                    {% endif %}
+
+                    {{ form_label(form.Tags) }}
+                    {{ form_widget(form.Tags, {attr: {'class': 'form-control bg-dark border-0', 'placeholder': 'tags', 'autocomplete': 'tags'}}) }}
+                    {% if form_errors(form.Tags)|length > 0 %}
+                        <div class="error-message">{{ form_errors(form.Tags) }}</div>
+                    {% endif %}
+
+                    <div class="text-center mb-0">
+                        {{ form_row(form.Submit, {attr: {'class': 'btn btn-primary py-3 w-100 mb-4'} }) }}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ form_end(form)}}
+{% endblock %}

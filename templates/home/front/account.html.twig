@@ -1,0 +1,1265 @@
+<style>
+    img {
+        vertical-align: middle;
+        border-style: none;
+    }
+    button {
+        border-radius: 0;
+    }
+
+    button:focus {
+        outline: 1px dotted;
+        outline: 5px auto -webkit-focus-ring-color;
+    }
+
+
+    button,
+    html [type='button'],
+    [type='reset'],
+    [type='submit'] {
+        -webkit-appearance: button;
+    }
+
+    button::-moz-focus-inner,
+    [type='button']::-moz-focus-inner,
+    [type='reset']::-moz-focus-inner,
+    [type='submit']::-moz-focus-inner {
+        padding: 0;
+        border-style: none;
+    }
+    .container {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 15px;
+        padding-left: 15px;
+        background-color: transparent;
+    }
+
+    .container-fluid {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 15px;
+        padding-left: 15px;
+        background-color: transparent;
+    }
+
+    .form-control {
+        font-size: 1rem;
+        line-height: 1.5;
+        display: block;
+        width: 100%;
+        height: calc(2.75rem + 2px);
+        padding: .625rem .75rem;
+        transition: all .2s cubic-bezier(.68, -.55, .265, 1.55);
+        color: rgb(250, 0, 46);
+        border: 1px solid rgb(250, 0, 46);
+        border-radius: .375rem;
+        background-color: transparent;
+        background-clip: padding-box;
+        box-shadow: none;
+
+    }
+    .form-control::-ms-expand {
+        border: 0;
+        background-color: transparent;
+    }
+
+    .form-control:focus {
+        color: rgb(250, 0, 46);
+        border-color: rgb(250, 0, 46);
+        outline: 0;
+        background-color: rgb(250, 0, 46);
+    }
+
+    .form-control:-ms-input-placeholder {
+        opacity: 1;
+        color: rgb(250, 0, 46);
+    }
+
+    .form-control::-ms-input-placeholder {
+        opacity: 1;
+        color: rgb(250, 0, 46);
+    }
+
+    .form-control::placeholder {
+        opacity: 1;
+        color: rgb(250, 0, 46);
+    }
+
+    .form-control:disabled,
+    .form-control[readonly] {
+        opacity: 1;
+        background-color: rgb(250, 0, 46);
+    }
+
+    textarea.form-control {
+        height: auto;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-inline {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+
+
+
+    .form-inline .form-group {
+        display: flex;
+        margin-bottom: 0;
+        flex: 0 0 auto;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+
+    .form-inline .form-control {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+    }
+
+    .form-inline .input-group {
+        width: auto;
+    }
+    }
+
+    .btn {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.5;
+        display: inline-block;
+        padding: .625rem 1.25rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+        border: 1px solid transparent;
+        border-radius: .375rem;
+    }
+
+
+
+    .btn:hover,
+    .btn:focus {
+        text-decoration: none;
+    }
+
+    .btn:focus {
+        outline: 0;
+        box-shadow: 0 7px 14px rgb(255, 255, 255), 0 3px 6px rgb(255, 255, 255);
+    }
+
+    .btn:disabled {
+        opacity: .65;
+        box-shadow: none;
+    }
+
+    .btn:not(:disabled):not(.disabled) {
+        cursor: pointer;
+    }
+
+    .btn:not(:disabled):not(.disabled):active {
+        box-shadow: none;
+    }
+
+    .btn:not(:disabled):not(.disabled):active:focus {
+        box-shadow: 0 7px 14px rgb(255, 255, 255), 0 3px 6px rgb(255, 255, 255), none;
+    }
+
+    .btn-primary {
+        color: #fff;
+        border-color: #000000;
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgb(255, 255, 255), 0 1px 3px rgb(255, 255, 255);
+    }
+
+    .btn-primary:hover {
+        color: #fff;
+        border-color: #ffffff;
+        background-color: #ffffff;
+    }
+
+    .btn-primary:focus {
+        box-shadow: 0 4px 6px rgb(255, 255, 255), 0 1px 3px rgb(0, 0, 0), 0 0 0 0 rgb(255, 255, 255);
+    }
+
+    .btn-primary:disabled {
+        color: #fff;
+        border-color: #ffffff;
+        background-color: #ffffff;
+    }
+
+    .btn-primary:not(:disabled):not(.disabled):active {
+        color: #fff;
+        border-color: #ffffff;
+        background-color: #ffffff;
+    }
+
+    .btn-primary:not(:disabled):not(.disabled):active:focus {
+        box-shadow: 0 0 0 0 rgb(255, 255, 255);
+    }
+
+    .btn-info {
+        color: #fff;
+        border-color: #ffffff;
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgb(0, 0, 0), 0 1px 3px rgb(250, 0, 46);
+    }
+
+    .btn-info:hover {
+        color: #fff;
+        border-color: #ffffff;
+        background-color: #ffffff;
+    }
+
+    .btn-info:focus {
+        box-shadow: 0 4px 6px rgb(0, 0, 0), 0 1px 3px rgb(0, 0, 0), 0 0 0 0 rgb(255, 255, 255);
+    }
+
+    .btn-info:disabled {
+        color: #fff;
+        border-color: #ffffff;
+        background-color: #ffffff;
+    }
+
+    .btn-info:not(:disabled):not(.disabled):active {
+        color: #fff;
+        border-color: #ffffff;
+        background-color: #ffffff;
+    }
+
+    .btn-info:not(:disabled):not(.disabled):active:focus {
+        box-shadow: none, 0 0 0 0 rgb(255, 255, 255);
+    }
+
+    .btn-default {
+        color: #fff;
+        border-color: #ffffff;
+        background-color: #000000;
+        box-shadow: 0 4px 6px rgb(255, 255, 255), 0 1px 3px rgb(0, 0, 0);
+    }
+
+    .btn-default:hover {
+        color: #fff;
+        border-color: #ffffff;
+        background-color: #ffffff;
+    }
+
+    .btn-default:focus {
+        box-shadow: 0 4px 6px rgb(0, 0, 0), 0 1px 3px rgb(255, 255, 255), 0 0 0 0 rgb(255, 255, 255);
+    }
+
+    .btn-default:disabled {
+        color: #fff;
+        border-color: #ffffff;
+        background-color: #ffffff;
+    }
+
+    .btn-default:not(:disabled):not(.disabled):active {
+        color: #fff;
+        border-color: #ffffff;
+        background-color: #ffffff;
+    }
+
+    .btn-default:not(:disabled):not(.disabled):active:focus {
+        box-shadow: none, 0 0 0 0 rgb(255, 255, 255);
+    }
+
+    .btn-sm {
+        font-size: .875rem;
+        line-height: 1.5;
+        padding: .25rem .5rem;
+        border-radius: .375rem;
+    }
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: .375rem;
+        background-color: #ffffff;
+        background-clip: border-box;
+    }
+
+    .card>hr {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+        flex: 1 1 auto;
+    }
+
+    .card-header {
+        margin-bottom: 0;
+        padding: 1.25rem 1.5rem;
+        border-bottom: 1px solid rgb(0, 0, 0);
+        background-color: #ffffff;
+    }
+
+    .card-header:first-child {
+        border-radius: calc(.375rem - 1px) calc(.375rem - 1px) 0 0;
+    }
+
+    @keyframes progress-bar-stripes {
+        from {
+            background-position: 1rem 0;
+        }
+
+        to {
+            background-position: 0 0;
+        }
+    }
+
+    .progress {
+        font-size: .75rem;
+        display: flex;
+        overflow: hidden;
+        height: 1rem;
+        border-radius: .375rem;
+        background-color: #fa002e;
+        box-shadow: inset 0 .1rem .1rem rgb(0, 0, 0);
+    }
+    .bg-secondary {
+        background-color: #fa002e !important;
+    }
+
+    a.bg-secondary:hover,
+    a.bg-secondary:focus,
+    button.bg-secondary:hover,
+    button.bg-secondary:focus {
+        background-color: #ffffff !important;
+    }
+
+    .bg-default {
+        background-color: #000000 !important;
+    }
+
+    a.bg-default:hover,
+    a.bg-default:focus,
+    button.bg-default:hover,
+    button.bg-default:focus {
+        background-color: #000000 !important;
+    }
+
+    .bg-white {
+        background-color: #fa002e !important;
+    }
+
+    a.bg-white:hover,
+    a.bg-white:focus,
+    button.bg-white:hover,
+    button.bg-white:focus {
+        background-color: #ffffff !important;
+    }
+
+    .bg-white {
+        background-color: #fa002e !important;
+    }
+
+    .border-0 {
+        border: 0 !important;
+    }
+
+    .rounded-circle {
+        border-radius: 50% !important;
+    }
+
+    .d-none {
+        display: none !important;
+    }
+
+    .d-flex {
+        display: flex !important;
+    }
+
+
+    .justify-content-center {
+        justify-content: center !important;
+    }
+
+    .justify-content-between {
+        justify-content: space-between !important;
+    }
+
+    .align-items-center {
+        align-items: center !important;
+    }
+    .shadow,
+    .card-profile-image img {
+        box-shadow: 0 0 2rem 0 rgb(0, 0, 0) !important;
+    }
+
+    .m-0 {
+        margin: 0 !important;
+    }
+
+    .mt-0 {
+        margin-top: 0 !important;
+    }
+
+    .mb-0 {
+        margin-bottom: 0 !important;
+    }
+
+    .mr-2 {
+        margin-right: .5rem !important;
+    }
+
+    .ml-2 {
+        margin-left: .5rem !important;
+    }
+
+    .mr-3 {
+        margin-right: 1rem !important;
+    }
+
+    .mt-4,
+    .my-4 {
+        margin-top: 1.5rem !important;
+    }
+
+    .mr-4 {
+        margin-right: 1.5rem !important;
+    }
+
+    .mb-4,
+    .my-4 {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .mb-5 {
+        margin-bottom: 3rem !important;
+    }
+
+    .mt--7 {
+        margin-top: -6rem !important;
+    }
+
+    .pt-0 {
+        padding-top: 0 !important;
+    }
+
+    .pr-0 {
+        padding-right: 0 !important;
+    }
+
+    .pb-0 {
+        padding-bottom: 0 !important;
+    }
+
+    .pt-5 {
+        padding-top: 3rem !important;
+    }
+
+    .pt-8 {
+        padding-top: 8rem !important;
+    }
+
+    .pb-8 {
+        padding-bottom: 8rem !important;
+    }
+
+    .m-auto {
+        margin: auto !important;
+    }
+    .text-right {
+        text-align: right !important;
+    }
+
+    .text-center {
+        text-align: center !important;
+    }
+
+    .text-uppercase {
+        text-transform: uppercase !important;
+    }
+
+    .font-weight-light {
+        font-weight: 300 !important;
+    }
+
+    .font-weight-bold {
+        font-weight: 600 !important;
+    }
+
+    .text-white {
+        color: #f64060 !important;
+    }
+
+    .text-white {
+        color: #f64060 !important;
+    }
+
+    a.text-white:hover,
+    a.text-white:focus {
+        color: #ffffff !important;
+    }
+
+    .text-muted {
+        color: #fa002e !important;
+    }
+
+
+    a:not(.btn) {
+        text-decoration: underline;
+    }
+
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h3 {
+        page-break-after: avoid;
+    }
+
+    @page {
+        size: a3;
+    }
+
+    body {
+        min-width: 992px !important;
+    }
+
+    .container {
+        min-width: 992px !important;
+    }
+
+    .navbar {
+        display: none;
+    }
+    }
+
+    figcaption,
+    main {
+        display: block;
+    }
+
+    main {
+        overflow: hidden;
+    }
+
+    .bg-white {
+        background-color: #ffffff !important;
+    }
+
+    a.bg-white:hover,
+    a.bg-white:focus,
+    button.bg-white:hover,
+    button.bg-white:focus {
+        background-color: #ffffff !important;
+    }
+
+    .bg-gradient-default {
+        background: linear-gradient(87deg, #fa002e 0, #f64060 100%) !important;
+    }
+
+    .bg-gradient-default {
+        background: linear-gradient(87deg, #fa002e 0, #f64060 100%) !important;
+    }
+
+    @keyframes floating-lg {
+        0% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(15px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes floating {
+        0% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(10px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    .opacity-8 {
+        opacity: .8 !important;
+    }
+
+    .opacity-8 {
+        opacity: .9 !important;
+    }
+
+    .center {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    [class*='shadow'] {
+        transition: all .15s ease;
+    }
+
+    .font-weight-300 {
+        font-weight: 300 !important;
+    }
+
+    .text-sm {
+        font-size: .875rem !important;
+    }
+
+    .text-white {
+        color: #000000 !important;
+    }
+
+    a.text-white:hover,
+    a.text-white:focus {
+        color: #000000 !important;
+    }
+
+    .avatar {
+        font-size: 1rem;
+        display: inline-flex;
+        width: 48px;
+        height: 48px;
+        color: #fff;
+        border-radius: 50%;
+        background-color: #fa002e;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .avatar img {
+        width: 100%;
+        border-radius: 50%;
+    }
+
+    .avatar-sm {
+        font-size: .875rem;
+        width: 36px;
+        height: 36px;
+    }
+
+    .btn {
+        font-size: .875rem;
+        position: relative;
+        transition: all .15s ease;
+        letter-spacing: .025em;
+        text-transform: none;
+        will-change: transform;
+    }
+
+    .btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 7px 14px rgb(255, 255, 255), 0 3px 6px rgb(255, 255, 255);
+    }
+
+    .btn:not(:last-child) {
+        margin-right: .5rem;
+    }
+
+    .btn i:not(:first-child) {
+        margin-left: .5rem;
+    }
+
+    .btn i:not(:last-child) {
+        margin-right: .5rem;
+    }
+
+    .input-group .btn {
+        margin-right: 0;
+        transform: translateY(0);
+    }
+
+    .btn-sm {
+        font-size: .75rem;
+    }
+
+    [class*='btn-outline-'] {
+        border-width: 1px;
+    }
+
+    .card-profile-image {
+        position: relative;
+    }
+
+    .card-profile-image img {
+        position: absolute;
+        left: 50%;
+        max-width: 180px;
+        transition: all .15s ease;
+        transform: translate(-50%, -30%);
+        border-radius: .375rem;
+    }
+
+    .card-profile-image img:hover {
+        transform: translate(-50%, -33%);
+    }
+
+    .card-profile-stats {
+        padding: 1rem 0;
+    }
+
+    .card-profile-stats>div {
+        margin-right: 1rem;
+        padding: .875rem;
+        text-align: center;
+    }
+
+    .card-profile-stats>div:last-child {
+        margin-right: 0;
+    }
+
+    .card-profile-stats>div .heading {
+        font-size: 1.1rem;
+        font-weight: bold;
+        display: block;
+    }
+
+    .card-profile-stats>div .description {
+        font-size: .875rem;
+        color: #fa002e;
+    }
+
+    .main-content {
+        position: relative;
+    }
+
+    .main-content .navbar-top {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        background-color: transparent;
+    }
+    .dropdown {
+        display: inline-block;
+    }
+
+    .dropdown-menu {
+        min-width: 12rem;
+    }
+
+    .dropdown-menu .dropdown-item {
+        font-size: .875rem;
+        padding: .5rem 1rem;
+    }
+
+    .dropdown-menu .dropdown-item>i {
+        font-size: 1rem;
+        margin-right: 1rem;
+        vertical-align: -17%;
+    }
+
+    .dropdown-header {
+        font-size: .625rem;
+        font-weight: 700;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        text-transform: uppercase;
+        color: #000000;
+    }
+    .form-control-label {
+        font-size: .875rem;
+        font-weight: 600;
+        color: #000000;
+    }
+
+    .form-control {
+        font-size: .875rem;
+    }
+
+    .form-control:focus:-ms-input-placeholder {
+        color: rgb(0, 0, 0);
+    }
+
+    .form-control:focus::-ms-input-placeholder {
+        color: rgb(0, 0, 0);
+    }
+
+    .form-control:focus::placeholder {
+        color: rgb(0, 0, 0);
+    }
+
+    textarea[resize='none'] {
+        resize: none !important;
+    }
+
+    textarea[resize='both'] {
+        resize: both !important;
+    }
+
+    textarea[resize='vertical'] {
+        resize: vertical !important;
+    }
+
+    textarea[resize='horizontal'] {
+        resize: horizontal !important;
+    }
+
+    .form-control-alternative {
+        transition: box-shadow .15s ease;
+        border: 0;
+        box-shadow: 0 1px 3px rgb(250, 0, 46), 0 1px 0 rgb(0, 0, 0);
+    }
+
+    .form-control-alternative:focus {
+        box-shadow: 0 4px 6px rgb(246, 64, 96), 0 1px 3px rgb(250, 0, 46);
+    }
+    .focused .input-group-text {
+        color: #fa002e;
+        border-color: rgb(250, 0, 46);
+        background-color: #fff;
+    }
+
+    .focused .form-control {
+        border-color: rgb(250, 0, 46);
+    }
+
+    .header {
+        position: relative;
+    }
+    .focused .form-control {
+        border-color: rgb(250, 0, 46);
+    }
+    .progress {
+        overflow: hidden;
+        height: 8px;
+        margin-bottom: 1rem;
+        border-radius: .25rem;
+        background-color: #e9ecef;
+        box-shadow: inset 0 1px 2px rgb(250, 0, 46);
+    }
+
+
+</style>
+{% block head %}
+<!-- Html Code !-->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Al3ab</title>
+    <link
+            rel="icon" href="{{ asset('front_office/img/Al3ab/al3ab_blanc.png') }}">
+
+<body>
+<div class="main-content">
+    <!-- Top navbar -->
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>
+            {% block title %}Al3ab
+            {% endblock %}
+        </title>
+        <link
+                rel="icon" href="{{ asset('front_office/img/Al3ab/al3ab_blanc.png') }}">
+
+        <!-- Bootstrap CSS -->
+        <link
+                rel="stylesheet" href="{{ asset('front_office/css/bootstrap.min.css') }}">
+
+        <!-- Add more CSS files if needed -->
+        {% block stylesheets %}
+            <!-- animate CSS -->
+            <link
+                    rel="stylesheet" href="{{ asset('front_office/css/animate.css') }}">
+            <!-- owl carousel CSS -->
+            <link
+                    rel="stylesheet" href="{{ asset('front_office/css/owl.carousel.min.css') }}">
+            <!-- font awesome CSS -->
+            <link
+                    rel="stylesheet" href="{{ asset('front_office/css/all.css') }}">
+            <!-- flaticon CSS -->
+            <link rel="stylesheet" href="{{ asset('front_office/css/flaticon.css') }}">
+            <link
+                    rel="stylesheet" href="{{ asset('front_office/css/themify-icons.css') }}">
+            <!-- font awesome CSS -->
+            <link
+                    rel="stylesheet" href="{{ asset('front_office/css/magnific-popup.css') }}">
+            <!-- swiper CSS -->
+            <link
+                    rel="stylesheet" href="{{ asset('front_office/css/slick.css') }}">
+            <!-- style CSS -->
+            <link rel="stylesheet" href="{{ asset('front_office/css/style.css') }}">
+        {% endblock %}
+    </head>
+    {% endblock %}
+    {% block nav %}
+    <body>
+    <div
+            class="body_bg">
+        <!--::header part start::-->
+        <header class="main_menu single_page_menu">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <a class="navbar-brand" href="">
+                                <img src="{{ asset('front_office/img/Al3ab/al3ab_blanc.png') }}" alt="logo" width="20%" height="20%">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+									<span class="menu_icon">
+										<i class="fas fa-bars"></i>
+									</span>
+                            </button>
+
+                            <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ path('front') }}">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="">Events</a>
+                                    </li>
+                                    <!-- Add other menu items here -->
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Shop
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="blog.html">
+                                                Jeu</a>
+                                            <a class="dropdown-item" href="single-blog.html">Accessoires</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Services
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                            <a class="dropdown-item" href="elements.html">Claims</a>
+                                            <a class="dropdown-item" href=".html">Forum</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="contact.html">Contact</a>
+                                    </li>
+
+                                </ul>
+
+                                {% if app.user %}
+                                    <li class="nav-link dropdown">
+                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                            Welcome {{ app.user.getUserIdentifierNom() }}
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                            <a class="dropdown-item" href="/user/{{ app.user.getUserIdentifierId }}">Account</a>
+                                            <a class="dropdown-item" href="elements.html">Wallet:  {{ app.user.getUserIdentifierWallet }} </a>
+                                            {% if 'ROLE_ADMIN' in app.user.roles %}
+                                                <a class="dropdown-item" href="{{ path('back')}}">Administration section</a>
+                                            {% endif %}
+                                        </div>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="{{ path('app_logout')}}" class="btn_1 d-none d-sm-block">Logout</a>
+                                    </li>
+                                {% else %}
+                                    <a href="{{ path('app_login') }}" class="btn_1 d-none d-sm-block">Log In</a>
+                                {% endif %}
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Header part end-->
+
+        {% endblock %}
+        <!-- banner part start-->
+        {% block content %}
+            <section class="banner_part"> {
+                <div class="container">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-lg-6 col-md-8">
+                            <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center">
+                                <!-- Mask -->
+                                <!-- Header container -->
+                            </div>
+                        </div>
+                        <!-- Page content -->
+
+
+                        <div class="row">
+                            <div class="col-xl-4 order-xl-2 mb-3 mb-xl-0">
+                                <div class="card card-profile shadow">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-3 order-lg-2">
+                                            <div class="card-profile-image">
+                                                <a href="#">
+                                                    <img src="{{ asset('front_office/img/Al3ab/al3ab_blanc.png') }}" class="rounded-circle">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pt-0 pt-md-4 bg-gradient-default">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="card-profile-stats d-flex justify-content-center mt-md-5 ">
+                                                    <div>
+                                                    </div>
+                                                    <div>
+                                                    </div>
+                                                    <div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <h3>
+                                                Jessica Jones<span class="font-weight-light"></span>
+                                            </h3>
+                                            <div class="h5 font-weight-300">
+                                                <i class="ni location_pin mr-2"></i>
+                                            </div>
+                                            <div class="h5 mt-4">
+                                                <i class="ni business_briefcase-24 mr-2"></i>Gamer
+                                            </div>
+                                            <div>
+                                                <i class="ni education_hat mr-2"></i>Al3ab Games Member
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-8 order-xl-1" >
+                                <div class="card bg-gradient-default">
+                                    <div class="card-header">
+                                        <div class="row align-items-center">
+                                            <div class="col-8">
+                                                <h3 class="mb-0">My account</h3>
+
+                                            </div>
+                                            <div class="card-body ">
+                                                <form>
+                                                    <div class="pl-lg-4">
+                                                        <div class="row">
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group focused">
+                                                                    <label class="form-control-label" for="input-username">Username</label>
+                                                                    <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="lucky.jesse">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-control-label" for="input-email">Email address</label>
+                                                                    <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group focused">
+                                                                    <label class="form-control-label" for="input-first-name">Wallet</label>
+                                                                    <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="Your Wallet" value="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group focused">
+                                                                    <label class="form-control-label" for="input-first-name">Click On Settings To Modify your Account</label>
+                                                                    <a href="#!" class="btn ">Settings</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </section>
+        {% endblock %}
+        {% block footer %}
+            <footer class="footer_part">
+                <div class="footer_top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="single_footer_part">
+                                    <a href="index.html" class="footer_logo_iner">
+                                        <img src="img/logo.png" alt="#">
+                                    </a>
+                                    <p>Heaven fruitful doesn't over lesser days appear creeping seasons so behold bearing
+                                        days
+                                        open
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="single_footer_part">
+                                    <h4>Contact Info</h4>
+                                    <p>Address : Your address goes
+                                        here, your demo address.
+                                        Bangladesh.</p>
+                                    <p>Phone : +8880 44338899</p>
+                                    <p>Email : info@colorlib.com</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="single_footer_part">
+                                    <h4>Important Link</h4>
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a href="">
+                                                WHMCS-bridge</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Search Domain</a>
+                                        </li>
+                                        <li>
+                                            <a href="">My Account</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Shopping Cart</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Our Shop</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="single_footer_part">
+                                    <h4>Newsletter</h4>
+                                    <p>Heaven fruitful doesn't over lesser in days. Appear creeping seasons deve behold
+                                        bearing
+                                        days
+                                        open
+                                    </p>
+                                    <div id="mc_embed_signup">
+                                        <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part">
+                                            <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address" class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Email Address '">
+                                            <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
+                                                <i class="far fa-paper-plane"></i>
+                                            </button>
+                                            <div class="mt-10 info"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="copygight_text">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-lg-8">
+                                    <div class="copyright_text">
+                                        <P>
+                                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                            Copyright &copy;<script>
+                                                document.write(new Date().getFullYear());
+                                            </script>
+                                            All rights reserved | This template is made with
+                                            <i class="ti-heart" aria-hidden="true"></i>
+                                            by
+                                            <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                        </P>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="footer_icon social_icon">
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <a href="#" class="single_social_icon">
+                                                    <i class="fab fa-facebook-f"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="single_social_icon">
+                                                    <i class="fab fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="single_social_icon">
+                                                    <i class="fas fa-globe"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="single_social_icon">
+                                                    <i class="fab fa-behance"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            </footer>
+        {% endblock %}
+    </div>
+    <!-- jquery plugins here-->
+    <script src="{{ asset('front_office/js/jquery-1.12.1.min.js') }}"></script>
+
+    <!-- popper js -->
+    <script src="{{ asset('front_office/js/popper.min.js') }}"></script>
+
+    <!-- bootstrap js -->
+    <script src="{{ asset('front_office/js/bootstrap.min.js') }}"></script>
+
+    <!-- easing js -->
+    <script src="{{ asset('front_office/js/jquery.magnific-popup.js') }}"></script>
+
+    <!-- swiper js -->
+    <script src="{{ asset('front_office/js/swiper.min.js') }}"></script>
+
+    <!-- swiper js -->
+    <script src="{{ asset('front_office/js/masonry.pkgd.js') }}"></script>
+
+    <!-- particles js -->
+    <script src="{{ asset('front_office/js/owl.carousel.min.js') }}"></script>
+
+    <script src="{{ asset('front_office/js/jquery.nice-select.min.js') }}"></script>
+
+    <!-- slick js -->
+    <script src="{{ asset('front_office/js/slick.min.js') }}"></script>
+
+    <script src="{{ asset('front_office/js/jquery.counterup.min.js') }}"></script>
+
+    <script src="{{ asset('front_office/js/waypoints.min.js') }}"></script>
+
+    <script src="{{ asset('front_office/js/contact.js') }}"></script>
+
+    <script src="{{ asset('front_office/js/jquery.ajaxchimp.min.js') }}"></script>
+
+    <script src="{{ asset('front_office/js/jquery.form.js') }}"></script>
+
+    <script src="{{ asset('front_office/js/jquery.validate.min.js') }}"></script>
+
+    <script src="{{ asset('front_office/js/mail-script.js') }}"></script>
+
+    <!-- custom js -->
+    <script src="{{ asset('front_office/js/custom.js') }}"></script>

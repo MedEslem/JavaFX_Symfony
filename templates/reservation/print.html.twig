@@ -1,0 +1,118 @@
+
+<style>
+    @font-face {
+        font-family: 'Roboto', sans-serif;
+        src: local('Roboto'), url('path/to/Roboto.woff2') format('woff2');
+    }
+
+    html, body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        background-color: #111; /* Darker black */
+        color: #eee; /* Brighter white text color */
+    }
+
+    h1 {
+        text-align: center;
+        padding: 20px 0;
+        font-size: 28px; /* Increased font size */
+        font-weight: bold;
+        color: #990000; /* Dark red */
+        text-decoration: underline; /* Underline */
+        font-family: 'Arial', sans-serif; /* Different font */
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        page-break-inside: avoid;
+        color: #eee; /* Brighter white text color for the table */
+    }
+
+    th, td {
+        border: 1px solid #333; /* Dark gray border */
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #550000; /* Darker red for header background */
+        color: #eee; /* Brighter white text color for header */
+    }
+
+    tr:nth-child(even) {
+        background-color: #333; /* Dark gray background for even rows */
+    }
+
+    tr:nth-child(odd) {
+        background-color: #444; /* Darker gray background for odd rows */
+    }
+
+    .actions {
+        text-align: center;
+    }
+
+    .badge {
+        display: inline-block;
+        background-color: #333; /* Dark gray background for badges */
+        color: #eee; /* Brighter white text color for badges */
+        border: 1px solid #555; /* Darker gray border for badges */
+        padding: 5px 10px;
+        border-radius: 3px;
+        margin-right: 5px;
+        text-decoration: none;
+    }
+
+    .badge:hover {
+        background-color: #444; /* Darker gray background for badges on hover */
+    }
+
+    .action-link {
+        color: #ff0000; /* Bright red for action links */
+        text-decoration: none;
+        margin: 0 5px;
+    }
+
+    .action-link:hover {
+        text-decoration: underline;
+    }
+
+    table thead, table tfoot {
+        background-color: #550000; /* Darker red for header/footer background */
+        font-weight: bold;
+    }
+
+    table thead tr th:first-child, table tfoot tr th:first-child {
+        text-align: left;
+    }
+</style>
+
+<h1>Reservations list</h1>
+<body>
+<div class="table-responsive">
+    <table class="table app-table-hover mb-0 text-left">
+        <thead>
+        <tr>
+            <th>IdReservation</th>
+            <th>DateReservation</th>
+            <th>ModePaiement</th>
+            <th>Event</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for reservation in reservation %}
+            <tr>
+                <td>{{ reservation.IdReservation }}</td>
+                <td>{{ reservation.DateReservation ? reservation.DateReservation|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ reservation.ModePaiement }}</td>
+                <td>{{ reservation.Event }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6" style="text-align: center;">No records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>

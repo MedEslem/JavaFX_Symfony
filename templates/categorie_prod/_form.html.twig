@@ -1,0 +1,34 @@
+{% extends 'home/front/form.html.twig' %}
+
+{% block body %}
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    <div class="container-fluid">
+        <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <a href="{{ path('app_categorie_prod_index') }}" class="" >
+                            <h3 class="text-primary"><img src="{{ asset('front_office/img/Al3ab/al3ab_blanc.png') }} " width="30%" height="40%"  alt="">Ajouter Categorie</h3>
+                        </a>
+                    </div>
+
+                    {{ form_label(form.nom_categP) }}
+                    {{ form_widget(form.nom_categP, {attr: {'class': 'form-control bg-dark border-0','autocomplete': 'prix'}}) }}
+                    {% if form_errors(form.nom_categP)|length > 0 %}
+                        <div class="error-message">{{ form_errors(form.nom_categP) }}</div>
+                    {% endif %}
+
+                    {{ form_label(form.image_categ) }}
+                    {{ form_widget(form.image_categ, {attr: {'class': 'form-control bg-dark border-0','autocomplete': 'prix'}}) }}
+                    {% if form_errors(form.image_categ)|length > 0 %}
+                        <div class="error-message">{{ form_errors(form.image_categ) }}</div>
+                    {% endif %}
+                    <div class="text-center mb-0">
+                        {{ form_row(form.Submit, {attr: {'class': 'btn btn-primary py-3 w-100 mb-4'} }) }}
+                        {{ form_end(form)}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

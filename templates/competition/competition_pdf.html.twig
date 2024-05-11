@@ -1,0 +1,99 @@
+<style>
+    @font-face {
+        font-family: 'Roboto', sans-serif; /* Web-safe font */
+        src: local('Roboto'), url('path/to/Roboto.woff2') format('woff2'); /* Add fallback */
+    }
+
+    html, body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0; /* Remove default margins */
+    }
+
+    h1 {
+        text-align: center;
+        padding: 20px 0;
+        font-size: 22px;
+        font-weight: bold;
+        color: #c0392b; /* Red for header text */
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        page-break-inside: avoid; /* Keep entire table on one page */
+    }
+
+    th, td {
+        border: 1px solid #cccccc; /* Darker grey border */
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #e0e0e0; /* Bolder grey header */
+        color: #333; /* Black text for headers */
+    }
+
+    tr:nth-child(even) {
+        background-color: #f5f5f5; /* Lighter grey for even rows */
+    }
+
+    tr:nth-child(odd) {
+        background-color: rgba(192, 57, 43, 0.1); /* Red tint for odd rows */
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .container_table {
+        background: linear-gradient(to bottom, #f5f5f5, #e0e0e0); /* Background gradient */
+        padding: 20px; /* Add padding for better spacing */
+    }
+
+    .footer h5 {
+        color: #c0392b; /* Red text for footer */
+    }
+</style>
+
+<body>
+
+
+<div class="container_table">
+
+    <h1>Détails de la compétition</h1>
+
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name  competition</th>
+            <th>Description competition</th>
+            <th>Date competition</th>
+            <th>Time competition</th>
+            <th>Type competition</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for competition in competitions %}
+            <tr>
+                <td>{{ competition.id }}</td>
+                <td>{{ competition.nomC }}</td>
+                <td>{{ competition.descriptionC }}</td>
+                <td>{{ competition.dateC ? competition.dateC|date('Y-m-d') : '' }}</td>
+                <td>{{ competition.heureC ? competition.heureC|date('H:i:s') : '' }}</td>
+                <td>{{ competition.typeC }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucun enregistrement trouvé</td> </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="footer">
+        <h5>Signé</h5>
+    </div>
+</div>
+</body>
