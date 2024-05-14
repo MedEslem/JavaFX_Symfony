@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FrontEvent">
+   <children>
+      <ImageView fitHeight="598.0" fitWidth="1223.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../banner_bg.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutY="1.0" prefHeight="575.0" prefWidth="176.0">
+         <children>
+            <Text fill="WHITE" layoutX="4.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" textAlignment="CENTER" wrappingWidth="171.7367706298828">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <Label fx:id="connectedTxt" layoutX="34.0" layoutY="45.0" prefHeight="27.0" prefWidth="111.0" textAlignment="CENTER" textFill="#e91e63">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="logoutIN" layoutX="29.0" layoutY="494.0" mnemonicParsing="false" opacity="0.84" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: #E80E10;" text="Logout" />
+            <Button fx:id="HomeBTN" layoutX="34.0" layoutY="115.0" mnemonicParsing="false" onAction="#homePage" prefHeight="26.0" prefWidth="111.0" text="Home" />
+            <Button fx:id="shopBTN" layoutX="34.0" layoutY="154.0" mnemonicParsing="false" onAction="#ShopPage" prefHeight="26.0" prefWidth="111.0" text="Shop" />
+            <Button layoutX="34.0" layoutY="193.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: #1f294e;" text="Events" />
+            <Button fx:id="compBTN" layoutX="32.0" layoutY="234.0" mnemonicParsing="false" onAction="#CompPage" prefHeight="26.0" prefWidth="111.0" text="Competition" />
+            <Button fx:id="profileBTN" layoutX="32.0" layoutY="311.0" mnemonicParsing="false" onAction="#ProfilePage" prefHeight="26.0" prefWidth="111.0" text="My Profile" />
+            <Button fx:id="adminBTN" layoutX="29.0" layoutY="415.0" mnemonicParsing="false" onAction="#adminPage" opacity="0.84" prefHeight="39.0" prefWidth="111.0" text="Admin Space" />
+            <Button fx:id="forum" layoutX="32.0" layoutY="274.0" mnemonicParsing="false" onAction="#allerVersBtnMessagerie" prefHeight="26.0" prefWidth="111.0" text="Forum" />
+         </children>
+      </AnchorPane>
+      <Text fill="WHITE" layoutX="200.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enjoy The Best Gaming Experience" textAlignment="CENTER" wrappingWidth="306.93678283691406">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Line endX="200.60000610351562" endY="-7.62939453125E-6" layoutX="301.0" layoutY="46.0" startX="-100.0" stroke="#e91e63" />
+      <Line endX="200.60000610351562" endY="-7.62939453125E-6" layoutX="301.0" layoutY="48.0" startX="-100.0" stroke="#e91e63" />
+      <ImageView fitHeight="120.0" fitWidth="140.0" layoutX="1079.0" layoutY="441.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../al3ab_blanc.png" />
+         </image>
+      </ImageView>
+      <ListView fx:id="listevents" layoutX="200.0" layoutY="116.0" prefHeight="406.0" prefWidth="720.0" stylesheets="@../Asma/StyleAsma.css"/>
+      <Button fx:id="reservationBTN" layoutX="940.0" layoutY="269.0" mnemonicParsing="false" onAction="#AddReservationPage" prefHeight="39.0" prefWidth="205.0" text="Make A Reservation">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Text fill="WHITE" layoutX="188.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Our Events" textAlignment="CENTER" wrappingWidth="238.93678283691406">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

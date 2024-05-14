@@ -1,0 +1,142 @@
+/* Text Styles */
+.list-view {
+    -fx-background-color: #b70707; /* Transparent background */
+    -fx-border-color: #8c0202; /* Transparent border */
+}
+/* ListView Cells */
+.list-cell {
+    -fx-text-fill: #4f0410; /* White text color */
+    -fx-padding: 10px; /* Padding inside each cell */
+    -fx-background-color: #eaa6a6; /* Transparent background for cells */
+    -fx-background-radius: 10px; /* Rounded corners for cells */
+    -fx-border-color: transparent; /* Transparent border for cells */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 5); /* Soft shadow for cells */
+    -fx-opacity: 0.8; /* Opacity for non-selected cells */
+    -fx-transition: opacity 0.3s; /* Smooth opacity transition */
+    -fx-font-weight: bold;
+}
+.list-cell:selected {
+    -fx-background-color: #800f0a; /* Blue background when selected */
+    -fx-text-fill: #fff; /* White text color when selected */
+    -fx-opacity: 1.0; /* Full opacity when selected */
+}
+.title {
+    font-family: "Arial", sans-serif; /* Adjust font family as needed */
+    font-size: 2em;
+    -fx-text-fill: #fff; /* White color for title */
+    text-align: center; /* Center align the title */
+}
+
+.subtitle {
+    font-family: "Arial", sans-serif; /* Adjust font family as needed */
+    font-size: 1.2em;
+    -fx-text-fill: #E91E63; /* Pink color for subtitle */
+    text-align: center; /* Center align the subtitle */
+    margin-top: 0.5em; /* Add some margin after the title */
+}
+/* Text Input Field with Animation */
+.text-input {
+    width: 100%; /* Make input fields take full width */
+    padding: 0.5em;
+    border: none; /* Remove default border */
+    border-radius: 0.3em; /* Rounded corners for input fields */
+    font-family: inherit; /* Inherit font family from parent elements */
+    -fx-background-color: rgba(255, 0, 0, 0.34); /* Transparent background */
+    -fx-text-fill: #fff; /* White color for input text */
+}
+
+.text-input:empty .prompt {
+    -fx-text-fill: #E91E63; /* Pink color for prompt (when input is empty) */
+    -fx-translate-y: 0; /* Prompt stays at top (when input is empty) */
+}
+
+.text-input:not(:empty) .prompt {
+    -fx-text-fill: #fff; /* White color for prompt (when input has text) */
+    -fx-translate-y: -1.2em; /* Prompt shrinks and moves up (when input has text) */
+    font-size: 0.8em; /* Prompt size reduces (when input has text) */
+}
+
+.prompt {
+    position: relative; /* Needed for prompt positioning */
+    top: 0.5em; /* Initial position of the prompt */
+    left: 0.5em;  /* Adjust prompt positioning as needed */
+    transition: -fx-text-fill 0.2s ease-in-out, -fx-translate-y 0.2s ease-in-out, font-size 0.2s ease-in-out; /* Animation properties */
+}
+
+/* Buttons (adjust styles as needed) */
+.button {
+    -fx-background-color:  #cc0001; /* Pink color for buttons */
+    -fx-text-fill: #fff; /* White color for button text */
+    border: none; /* Remove default button border */
+    padding: 0.8em 1.5em; /* Add some padding for button text */
+    border-radius: 0.3em; /* Rounded corners for buttons */
+    cursor: pointer; /* Set cursor to pointer on hover */
+}
+
+.button:hover {
+    -fx-background-color: rgba(17, 17, 17, 0.39); /* Slightly darker pink on hover */
+}
+
+.button:active {
+    -fx-background-color: #a91043; /* Even darker pink on press */
+}
+.buttonlOGOUT {
+    -fx-background-color: rgba(255, 255, 255, 0.39); /* Pink color for buttons */
+    -fx-text-fill: #fff; /* White color for button text */
+    border: none; /* Remove default button border */
+    padding: 0.8em 1.5em; /* Add some padding for button text */
+    border-radius: 0.3em; /* Rounded corners for buttons */
+    cursor: pointer; /* Set cursor to pointer on hover */
+}
+
+.buttonlOGOUT:hover {
+    -fx-background-color: rgb(204, 0, 1);
+    /* Slightly darker pink on hover */
+}
+
+.buttonlOGOUT:active {
+    -fx-background-color: #a91043; /* Even darker pink on press */
+}
+.buttonlMember {
+    -fx-background-color: rgb(52, 46, 40); /* Pink color for buttons */
+    -fx-text-fill: #fff; /* White color for button text */
+    border: none; /* Remove default button border */
+    padding: 0.8em 1.5em; /* Add some padding for button text */
+    border-radius: 0.3em; /* Rounded corners for buttons */
+    cursor: pointer; /* Set cursor to pointer on hover */
+}
+
+.buttonlMember:hover {
+    -fx-background-color: rgba(204, 0, 1, 0.68);
+    /* Slightly darker pink on hover */
+}
+
+.buttonlMember:active {
+    -fx-background-color: #a91043; /* Even darker pink on press */
+}
+.text-area {
+    width: 100%;
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.3em;
+    font-family: inherit;
+    -fx-background-color: rgba(255, 0, 0, 0.34); /* Transparent background */
+    -fx-text-fill: rgba(0, 0, 0, 0.73); /* White color for text */
+    resize: vertical; /* Allow vertical resizing of textarea */
+    position: relative; /* Enable absolute positioning for child element */
+}
+
+.text-area::before {
+    content: attr(placeholder); /* Inherit placeholder text */
+    color: #E91E63; /* Pink color for prompt */
+    position: absolute; /* Position element absolutely */
+    top: 0.5em; /* Adjust vertical position of prompt */
+    left: 0.5em; /* Adjust horizontal position of prompt */
+    pointer-events: none; /* Disable interaction with prompt element */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Add smooth transition */
+}
+
+.text-area:not(:empty)::before {
+    opacity: 0; /* Hide prompt when textarea has text */
+    transform: translateY(-1.2em) scale(0.8); /* Move and shrink prompt when not empty */
+}

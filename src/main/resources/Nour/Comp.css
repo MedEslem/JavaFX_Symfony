@@ -1,0 +1,48 @@
+/* competitionListView.css */
+
+/* Style pour chaque cellule de la liste */
+.list-cell {
+    -fx-background-color: rgba(255, 250, 250, 0.82); /* Couleur de fond */
+    -fx-padding: 10px; /* Espacement intérieur */
+    -fx-border-width: 0 0 2px 0; /* Bordure basse */
+    -fx-border-color: transparent; /* Couleur de la bordure */
+    -fx-border-radius: 0; /* Pas de bordure arrondie */
+    -fx-background-radius: 0; /* Pas de coin arrondi */
+    -fx-background-insets: 0; /* Pas d'espacement pour le fond */
+    -fx-text-fill: rgba(238, 31, 31, 0.77); /* Couleur du texte */
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-alignment: center; /* Alignement central du contenu */
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 250, 250, 0.68), 10, 0, 0, 0); /* Effet de surbrillance */
+    -fx-cursor: hand; /* Curseur de type main */
+    -fx-transition: background-color 0.3s; /* Animation de changement de couleur de fond */
+}
+
+/* Style pour les cellules de liste sélectionnées */
+.list-cell:selected {
+    -fx-background-color: rgb(255, 255, 255); /* Couleur de fond pour la sélection */
+}
+
+
+
+/* Style pour les cellules de liste avec un élément vide */
+.list-cell:empty {
+    -fx-background-color: transparent; /* Fond transparent */
+}
+
+/* Style pour le focus de la liste */
+.list-view:focused {
+    -fx-background-color: transparent; /* Fond transparent */
+    -fx-focus-color: transparent; /* Couleur du focus */
+}
+
+/* Style pour la bordure de la liste */
+.list-view {
+    -fx-border-width: 1px; /* Largeur de la bordure */
+    -fx-border-color: #ccc; /* Couleur de la bordure */
+}
+
+/* Animation de survol */
+.list-cell:hover {
+    -fx-border-color: rgba(255, 215, 0, 0.5); /* Couleur de la bordure au survol */
+    -fx-background-color: rgba(255, 255, 255, 0.33); /* Couleur de fond au survol */
+}
